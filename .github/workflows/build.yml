@@ -7,7 +7,7 @@ on:
     - cron: '34 17 * * *'
 
 jobs:
-  devbuild:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,9 +17,7 @@ jobs:
       - uses: actions/upload-artifact@v2
       with:
         name: build-artifacts
-        path: /build/artifacts
+        path: build/artifacts
 
-
-    
 
       
