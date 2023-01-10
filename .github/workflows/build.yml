@@ -10,13 +10,16 @@ jobs:
   devbuild:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
       - uses: ./.github/workflows/devbuild.yml
       - uses: ./.github/workflows/nouse_install.yml
       - uses: ./.github/workflows/lint.yml
       - uses: actions/upload-artifact@v2
-        with:
-          name: build-artifacts
-          path: /build/artifacts
+      with:
+        name: build-artifacts
+        path: /build/artifacts
 
 
     
