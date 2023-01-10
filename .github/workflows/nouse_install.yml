@@ -85,7 +85,10 @@ jobs:
         python3 -c "import _modmesh; print(_modmesh.__file__)"
         pytest --rootdir=/tmp -v
         cd ..
-
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build/artifacts
   nouse_install_macos:
 
     if: ${{ github.event_name != '' || (github.event_name == '' && github.repository_owner == 'solvcon') }}
@@ -168,3 +171,7 @@ jobs:
           python3 -c "import _modmesh; print(_modmesh.__file__)"
           pytest --rootdir=/tmp -v
           cd ..
+      - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build/artifacts

@@ -191,7 +191,10 @@ jobs:
     - name: make run_viewer_pytest
       run: |
         make run_viewer_pytest VERBOSE=1
-
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build/artifacts
   build_macos:
 
     if: ${{ github.event_name != '' || (github.event_name == '' && github.repository_owner == 'solvcon') }}
@@ -318,7 +321,10 @@ jobs:
       - name: make run_viewer_pytest
         run: |
           make run_viewer_pytest VERBOSE=1
-
+      - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build/artifacts
   build_windows:
 
     if: ${{ github.event_name != '' || (github.event_name == '' && github.repository_owner == 'solvcon') }}
