@@ -1,10 +1,10 @@
 name: lint
 
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '34 17 * * *'
+# on:
+#   push:
+#   pull_request:
+#   schedule:
+#     - cron: '34 17 * * *'
 
 jobs:
 
