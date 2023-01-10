@@ -87,9 +87,9 @@ jobs:
         cd ..
     - uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts
-        path: build/artifacts
-        
+        name: save all
+        path: ./*
+
   nouse_install_macos:
 
     if: ${{ github.event_name != '' || (github.event_name == '' && github.repository_owner == 'solvcon') }}
@@ -174,5 +174,5 @@ jobs:
           cd ..
       - uses: actions/upload-artifact@v3
         with:
-          name: build-artifacts
-          path: build/artifacts
+          name: save all
+          path: ./*
