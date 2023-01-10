@@ -129,7 +129,7 @@ jobs:
           ${JOB_MAKE_ARGS} \
           CMAKE_BUILD_TYPE=${{ matrix.cmake_build_type }} \
           CMAKE_ARGS="-DPYTHON_EXECUTABLE=$(which python3)"
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         path: build/artifacts
@@ -223,7 +223,7 @@ jobs:
             ${JOB_MAKE_ARGS} \
             CMAKE_BUILD_TYPE=${{ matrix.cmake_build_type }} \
             CMAKE_ARGS="-DPYTHON_EXECUTABLE=$(which python3)"
-      - uses: actions/upload-artifact@v2
-      with:
-        name: build-artifacts
-        path: build/artifacts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: build/artifacts
